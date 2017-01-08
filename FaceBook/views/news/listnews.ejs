@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <center>
+    <h1><%= title %></h1>
+    <a href="/users/add">添加新闻</a>
+    <hr/>
+    <h3>浏览新闻信息</h3>
+    <table width="800" border="1">
+        <tr>
+            <th>新闻Id号</th>
+            <th>作者名称</th>
+            <th>新闻大事件</th>
+            <th>发布时间</th>
+            <th>操作</th>
+        </tr>
+        <% list.forEach(function(xinwen){ %>
+            <tr>
+                <td><%= xinwen.id %></td>
+                <td><%= xinwen.authorname %></td>
+                <td><%= xinwen.message %></td>
+                <td><%= xinwen.date %></td>
+                <td><a href="/users/delete?id=<%=xinwen.id%>">删除</a>
+				
+				<a href="/users/update?id=<%=xinwen.id%>">修改</a></td>
+				
+            </tr>
+        <% }); %>
+    </table>
+    </center>
+  </body>
+</html>

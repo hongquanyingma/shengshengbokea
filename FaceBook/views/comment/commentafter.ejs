@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	    <title>评论一下</title>
+	    <!-- Bootstrap -->
+	    <link href="/comment/css/bootstrap.min.css" rel="stylesheet">
+	    <link href="/comment/css/main.css" rel="stylesheet">
+	    <link href="/comment/css/about.css" rel="stylesheet">
+	    <link href="/comment/css/base.css" rel="stylesheet">
+	    <!--[if lt IE 9]>
+	      <script src="js/html5shiv.min.js"></script>
+	      <script src="js/respond.min.js"></script>
+	    <![endif]-->
+
+	    <script src="/comment/js/bootstrap.min.js"></script>
+
+		<style>
+			div,ul,li,a{margin: 0px;padding: 0px;}
+	    	a{text-decoration: none;}
+	    	a:hover{text-decoration: none;}
+	    	a:link{text-decoration: none;}
+	    	ul{list-style: none;}
+	    	.container{background-color:#E7ECEF;border: 1px solid #ddd;margin-top: -50px;}
+			.header{background-color: #FFFFFF;}
+			.header nav a{font-family: "微软雅黑";color: #48525E;}
+			
+			.nav{margin-left: 30px;margin-top: 10px;}
+			
+			.body-right ul li{float:left;margin:5px;padding: 10px;}
+			
+			.roate{margin-top: 150px;}
+			.body-right ul.roate li{float: left;
+									border: 1px solid #F17B6B;
+									margin: 10px;font-family: "微软雅黑";
+									font-size: 16px;
+									
+									}
+			.body-right ul.roate li:hover{
+				-webkit-animation:myfirst 1s;
+			}
+					@-webkit-keyframes myfirst /* Safari and Chrome */
+				{
+				0%   {transform: rotate(0deg);}
+				25%  {transform: rotate(180deg);}
+				50%  {transform: rotate(360deg);}
+				75%  {transform: rotate(540deg);}
+				100%  {transform: rotate(720deg);}
+				}		
+			/*.roate{padding: 5px;}*/
+			
+			.body2 div{float: left;}
+			@media (max-width: @screen-xs-max) { 
+				.body2-1{
+					width:90%;
+				} 
+			 }
+			@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { 
+				.body2-1{
+					width:40%;
+				} 
+			 }
+			@media (min-width: @screen-md-min) and (max-width: @screen-md-max) { 
+				.body2-1{
+					width:20%;
+				} 
+			}
+			
+			@media (min-width: @screen-lg-min)
+				.body2-1 {
+				    width: 20%;
+			}
+			
+			
+			.comment li{float: left;}
+			
+			.hf li{float: left;margin: 10px;}
+		</style>
+	</head>
+	<body style="background-color: #E7ECEF;">
+		<div class="container">
+			
+			<div class="row">
+				<div class="col-md-12 header" style="background-color: #E7ECEF;">
+					<nav class="navbar navbar-default" role="navigation" style="margin: 0px;">
+				        <div class="container-fluid">
+				          <div class="navbar-header">
+				            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				              <span class="sr-only">Toggle navigation</span>
+				              <span class="icon-bar"></span>
+				              <span class="icon-bar"></span>
+				              <span class="icon-bar"></span>
+				            </button>
+				          </div>
+				          <div id="navbar" class="navbar-collapse collapse">
+				            <ul class="nav navbar-nav navbar-right">
+				              <nav class="topnav" id="topnav">
+				  					<a href="Main.html"><span>首页</span><span class="en">Protal</span></a>
+				  					<a href="#"><span>关于我</span><span class="en">About</span></a>
+				  					<a href="#"><span>慢生活</span><span class="en">Life</span></a>
+				  					<a href="List2.html"><span>碎言碎语</span><span class="en">Doing</span></a>
+				  					<a href="#"><span>模板分享</span><span class="en">Share</span></a>
+				  					<a href="#"><span>学无止境</span><span class="en">Learn</span></a>
+				  					<a href="#"><span>留言版</span><span class="en">Guestbook</span></a>
+				  				</nav>
+				            </ul>
+				          </div>
+				        </div>
+				      </nav>
+  				</nav>
+				</div>
+			</div>
+			
+			<div class="row">
+				  	<div class="col-sm-6">
+				    	<div class="ih-item circle effect5"><a href="#">
+				        <div class="img"><img src="/comment/images/dan.jpg" class="" alt="img"></div>
+				        <div class="info">
+				          <div class="info-back">
+				            <h3>大圣美文</h3>
+				            <p>Welcome</p>
+				          </div>
+				        </div></a></div>
+					</div>
+					
+					<div class="col-sm-6">
+					    <div class="ih-item square effect7"><a href="#">
+					        <div class="img"><img src="/comment/images/move.jpg" alt="img"></div>
+					        <div class="info">
+					          <h3>大圣</h3>
+					          <p>不再因为别人过得好而焦虑，在没有人看得到你的时候依旧能保持节奏 </p>
+					        </div></a></div>
+		 			</div>
+			</div>
+			<hr/>
+			<div class="row">
+				<div class="col-md-12 body">
+					
+					<div class="col-md-9" 
+					  
+						style="background-color: #FFFFFF;
+						border: 1px solid #48525E; border-radius: 10px;padding: 10px;">
+						
+							<% list.forEach(function(article){ %>
+						
+						<h3><%= article.title %></h3>
+						<p style="font-size: 15px;font-family: '微软雅黑';">
+							<%= article.message %>
+						</p>
+						
+							
+					</div>
+					<div class="col-md-3 body-right" style="margin-top: 10px;">
+						<ul>
+							<li class="label label-default">个人博客</li>
+							<li class="label label-primary">Web开发</li>
+							<li class="label label-success">前端设计</li>
+							<li class="label label-danger">HTML</li>
+							<li class="label label-success">CSS3</li>
+							<li class="label label-info">百度</li>
+							<li class="label label-success">Jascript</li>
+							<li class="label label-warning">Html5+css3</li>
+							<li class="label label-danger">PHP</li>
+						</ul>	
+						<ul class="roate">
+							<li><a href="#">个人博客</a></li>
+							<li><a href="#">作品展示</a></li>
+							<li><a href="#">前端设计</a></li>
+							<li><a href="#">Web开发</a></li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-12">
+					<ul>
+						<li style="border:1px solid #48525E;
+							width: 100px;
+							font-size: 20px;
+							background-color: #FFFFFF;
+							text-align: center;">
+							开心一刻
+						</li>
+					</ul>
+				
+				</div>
+			</div>
+			
+			
+			<div class="row body2">
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 body2-1" >
+					<div style="border: 1px solid #F17B6B;border-radius: 10px;
+					background-color: #FFFFFF;">
+						<img src="/comment/images/touxiang6.png" style="margin: 15px auto;"/>
+						<p style="margin-top: 10px;">
+						和前女友分手时，前女友把我送她的爱疯当着我的面前摔碎了，对我咆哮：你送我的都还给你！然后转身走人，我在一旁不知所措，
+						过了一阵，我去收拾碎片，结果发现居然是摔碎的爱疯居然有两个卡槽...尼玛...我送的可是真的...
+					</p>
+					</div>					
+				</div>
+				
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 body2-1" >
+					<div style="border: 1px solid #F17B6B;border-radius: 10px;
+					background-color: #FFFFFF;">
+						<img src="/comment/images/touxiang2.png" style="margin: 15px auto;"/>
+					<p style="margin-top: 10px;">
+						公司空调开太冷了，我正好坐在窗户边上，于是偷偷的把窗户打开一点想暖和暖和。经理走到空调边上看看自言自语的说：
+						“这空调是不是坏了？怎么一点也不凉快？”让仓库换一台上来，经理这么任性吓得我悄悄关上了窗户！
+					</p>
+					</div>					
+				</div>
+				
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 body2-1" >
+					<div style="border: 1px solid #F17B6B;border-radius: 10px;
+					background-color: #FFFFFF;">
+						<img src="/comment/images/touxiang5.jpg" style="margin: 15px auto;"/>
+					<p style="margin-top: 10px;">
+						楼主初中语文老师一枚我们这有一个教历史的董老师，年纪大，资历老，官称董太师。昨天，副校长忙三火四的来找他，
+						进门就喊：“董师太，在不在？”只听角落一个声音淡定的回答：“住持，贫尼在此。”我能说我们一帮人差点笑断气么？还有俩罚站的学生呢。
+					</p>
+					</div>					
+				</div>
+				
+				<div class="col-lg-3 col-md-3 col-sm-7 col-xs-12 body2-1" >
+					<div style="border: 1px solid #F17B6B;border-radius: 10px;
+					background-color: #FFFFFF;">
+						<img src="/comment/images/touxiang7.jpg" style="margin: 15px auto;"/>
+					<p style="margin-top: 10px;">
+						有一天，三个相貌丑陋的人在一起闲聊，他们要用一句成语来形容自己奇丑无比。　　
+						甲说：我的长相太随心所欲了，所以我很丑。　　乙说：那也不如我长得为所欲为，我更丑。　
+					　丙说：你们都别争了，就我这长相绝对下不为例了，所以我最丑！
+					</p>
+					</div>					
+				</div>
+				
+			</div>
+			
+			<div class="row">
+				<div class="col-md-12">
+					<ul>
+						<li style="width: 100px;line-height: 50px;
+							background-color: #81c269;font-size: 20px;text-align: center;
+							color: #FFFFFF;">文章评论</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-12">
+					
+					 <form action="/commentmsg/add" method="post">
+					 <ul>
+					 
+					    <input type = "hidden" name='title_id' value="<%=article.a_id%>"/>
+						<input type = "hidden" name='u_id' value="<%=article.user_id%>"/>
+						
+						<li >
+							<textarea type="text" placeholder="让评论变得如此简单~~" name="commentmessage"
+								style="width:100%;height: 100px;padding: 10px;"></textarea>
+						</li>
+						<li style="float: right;margin-top: 10px;">
+							<button  type="submit" style="width: 100px;
+								line-height: 40px;font-size: 20px;
+								font-family: '微软雅黑';
+								color: #121212;">提交</button>
+						</li>
+						</ul>
+						</form>
+						
+					
+				</div>
+			</div>
+			 <% }); %>
+			 
+			 <% list2.forEach(function(comm){ %>
+			<div class="row">
+				<div class="col-md-12"  style="border-bottom: 1px solid #004444;padding: 10px;">
+					<ul class="comment">
+						<li><img src="/comment/images/touxiang1.jpg" width="50px"/></li>
+						<li>
+							<%=comm.d_message%>
+						</li>
+					</ul><br/>
+					<ul class="hf" style="margin-top: 20px;margin-left: 100px;">
+						<li>8月26日</li>
+						<li>回复</li>
+						<li>顶</li>
+						<li>转发</li>
+					</ul>
+				</div>
+			</div>
+			 <% }); %>
+			
+			
+			<div class="row">
+				<div class="col-md-12" style="background-color: #48525E;
+					text-align: center;margin-top: 30px;">
+					<h5>大圣博客  www.msy.com</h5>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+</html>
